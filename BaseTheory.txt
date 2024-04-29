@@ -1,0 +1,43 @@
+DFS hoạt động theo nguyên tắc LIFO của stack
+BFS hoạt động theo nguyên tắc FIFO của queue
+
+- Đồ thị trong file này sẽ được gọi tắt là Graph hoặc G. Kiểu đồ thị tùy vào từng bài. Đồ thị có N đỉnh, M cạnh
+- Hàm W(u,v) là hàm trọng số của cạnh nối đỉnh u->v
+
+1. Dijkstra
+- Giải quyết bài toán tìm đường đi ngắn nhất từ 1 đỉnh s -> tất cả các đỉnh còn lại
+- Đường đi ngắn nhất 1 nguồn ( Single-source shortest path )
+- Đồ thị có hướng, với trọng số không âm
+* Thuật toán - sử dụng cách biểu diễn đồ thị là danh sách kề ( adjacency list )
+- Giả sử thuật toán bắt đầu từ nguồn s
+- Gọi D[u] là đường đi ngắn nhất từ s->u. Ban đầu mọi D[u] = inf ( u != s ), và tất nhiên D[s] = 0
+- Gọi P[u] là trạng thái của đỉnh u. Ban đầu mọi P[u] = false
+    Nếu P[u] == true -> đỉnh u đã được xử lý, và đảm bảo D[u] là đường đi ngắn nhất có thể từ s -> u.
+    Nếu P[u] == false -> đỉnh u chưa được xử lý
+( Có thể dùng thêm mảng Trace để truy vét đường đi - Cách truy vét sẽ được nhắc đến cuối cùng)
+- Lặp N lần quá trình sau:
+    B1. Tìm đỉnh u có D[u] là min và P[u] == false
+    B2. Xét các đỉnh v là đỉnh kề của u. Ta tối ưu đường đi từ s->v bằng việc xét
+            Nếu D[v] > D[u] + W(u,v) => Gán D[v] = D[u] + W(u,v). Cập nhật mảng Trace[v] = u ( Để đi tới v thì đi qua u )
+    B3. Đánh dấu P[u] = true -> Đã xét xong đỉnh u
+- Sau khi lặp xong N lần thì ta có được mảng D với D[u] là khoảng cách ngắn nhất từ s->u
+- Đánh giá độ phức tạp thuật toán
+    Về mặt thời gian: Ta có N lần lặp
+        - B1. có độ phức tạp O(N) MỖI LẦN LẶP
+        - B2. có TỔNG độ phức tạp O(M) QUA N LẦN LẶP
+    => Độ phức tạp thời gian = O(N^2 + M)
+2. Dijkstra_Sparse ( Cải tiến thuật toán Dijkstra cho đồ thị thưa)
+* Nhận xét thuật toán Dijkstra cơ bản
+    - Ở B1, việc phải lặp qua toàn bộ đỉnh để tìm đỉnh u thỏa mãn gây tốn thời gian
+    -> Có thể cải tiến bằng việc ứng dụng CTDL min-heap ( priority_queue trong C++ - Hình như C không có CTDL hỗ trợ sẵn),
+     hoặc cây nhị phân tìm kiếm ( binary-search tree )
+    Khi đó, để truy xuất đỉnh u có D[u] là min chỉ tốn O(1)
+- Cải tiến B1
+    Mỗi lần tối ưu hóa D[v], ta đẩy cặp {v,D[v]} vào Heap
+    Để tìm u có D[u] bé nhất, ta liên tục lần phần tử trên cùng của queue cho đến khi P[u] == false
+- Đánh giá độ phức tạp thuật toán
+    Về mặt thời gian: Mỗi lần tối ưu D[v], ta cần push vào Heap 1 lần và pop 1 lần.
+    Do đồ thị có M cạnh -> Có M lần tối ưu
+    Do mỗi phép toán trên Heap tốn O(logK) ( K là số phần tử hiện có trong Heap, tuy nhiên ta có Kmax = N )
+    => Độ phức tạp thời gian của Dijkstra_Sparse = O(MlogN)
+

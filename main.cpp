@@ -159,6 +159,9 @@ void DijkstraSparse(const Graph& G,const char& s,const char& des) {
     Path path = tracePath(trace,s,des);
     for (char it : path) cout << it << ' ';
 }
+void Bellman_Ford(const Graph& G,const char& s,const char& des) {
+
+}
 
 int main() {
     Graph G = inputDirectedGraph();
