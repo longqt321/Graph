@@ -1,7 +1,27 @@
 - Kiểu dữ liệu Edge gồm char V, int W. Với V là đỉnh đích, W là trọng số từ đỉnh xuất phát -> V
- Kiểu dữ liệu Graph được định dạng theo cấu trúc map<char,vector<Edge>>.
- Cấu trúc trên dựa trên adjacency list G.find(u)->second là danh sách các đỉnh kể với u
- File main.cpp sẽ gồm các thuật toán phổ biến trên đồ thị
- - 2 thuật toán tìm kiếm DFS, BFS
- - 3 thuật toán tìm đường đi ngắn nhất Dijkstra ( và bản update cho đồ thị thưa - Sparse graph ), Bellman-Ford, Floy-Walshall
- - 2 thuật toán tìm cây khung nhỏ nhất Kruskal, Prim
+Kiểu dữ liệu Graph được định dạng theo cấu trúc map<char,vector<Edge>>.
+Cấu trúc trên dựa trên adjacency list G.find(u)->second là danh sách các đỉnh kể với u
+File main.cpp sẽ gồm các thuật toán phổ biến trên đồ thị
+- 2 thuật toán tìm kiếm DFS, BFS
+- 3 thuật toán tìm đường đi ngắn nhất Dijkstra ( và bản update cho đồ thị thưa - Sparse graph ), Bellman-Ford, Floy-Walshall
+- 2 thuật toán tìm cây khung nhỏ nhất Kruskal, Prim
+
+* Các kĩ thuật duyệt được sử dụng trong chương trình
+- Duyệt qua các đỉnh kề của đỉnh u: G.find(u)->second là vector<Edge> chứa đỉnh v và trọng số w giữa (u,v)
+- Duyệt qua các cạnh (u,v):
+   for (auto it : G){
+       char u = it.first;
+       vector<Edge> E = it.second;
+      for (auto e : E){
+           char v = e.v;
+           int w = e.w;
+           // Đã có u,v,w -> Xử lý tiếp
+       }
+   }
+   Hoặc là
+   for (auto it : G) {
+      char u = it.first;
+      for (Edge e : G.find(u)->second) {
+
+      }
+   }
