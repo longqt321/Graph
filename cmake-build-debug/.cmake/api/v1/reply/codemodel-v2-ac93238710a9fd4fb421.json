@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/The_University_of_Technology/Discrete Math/Graph/cmake-build-debug",
-		"source" : "D:/The_University_of_Technology/Discrete Math/Graph"
+		"build" : "D:/Long/The University of Technology/Graph/cmake-build-debug",
+		"source" : "D:/Long/The University of Technology/Graph"
 	},
 	"version" : 
 	{

@@ -1,3 +1,3 @@
-D:/The_University_of_Technology/Discrete Math/Graph/cmake-build-debug/CMakeFiles/Graph.dir
-D:/The_University_of_Technology/Discrete Math/Graph/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/The_University_of_Technology/Discrete Math/Graph/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Long/The University of Technology/Graph/cmake-build-debug/CMakeFiles/Graph.dir
+D:/Long/The University of Technology/Graph/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Long/The University of Technology/Graph/cmake-build-debug/CMakeFiles/rebuild_cache.dir

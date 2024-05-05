@@ -1,4 +1,4 @@
-# Install script for directory: D:/The_University_of_Technology/Discrete Math/Graph
+# Install script for directory: D:/Long/The University of Technology/Graph
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "D:/Program files/CLion 2024.1/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "D:/Long/Program files/msys2/mingw64/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/The_University_of_Technology/Discrete Math/Graph/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Long/The University of Technology/Graph/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

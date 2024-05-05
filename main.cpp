@@ -14,6 +14,12 @@ struct Edge {
     char v;
     int w;
 };
+
+struct Edges {
+    char u,v;
+    int w;
+};
+
 struct Node {
     char u;
     int dist;
@@ -24,7 +30,37 @@ struct cmp {
         return a.dist > b.dist;
     }
 };
+
+struct Dsu
+{
+    vector<int> parent;
+    vector<int> size;
+    void init(int n){
+        parent.resize(n+N,-1);
+        size.resize(n+N,0);
+        for (int i = 1;i <= n;++i) {
+            parent[i] = i;
+            size[i] = 1;
+        }
+    }
+    int find(int u){
+        if (u == parent[u]) return u;
+        return parent[u] = find(parent[u]);
+    }
+    bool join(int u,int v) {
+        u = find(u);
+        v = find(v);
+        if (u == v) return false;
+        if (size[u] < size[v])  swap(u,v);
+        parent[v] = u;
+        size[u] += size[v];
+        return true;
+    }
+}dsu;
+
+
 typedef map<char,vector<Edge>> Graph;
+typedef vector<Edges> MatGraph;
 typedef vector<int> Path;
 // Ham lay so canh va so dinh cua graph, mac dinh first -> so dinh N, second -> so canh M. Chi tinh cac dinh lien thuoc va canh lien thuoc
 pair<int,int> getGraphInfo(const Graph& G) {
@@ -56,6 +92,16 @@ vector<char> getVertexes(const Graph& G) {
     vector<char>vt (st.begin(),st.end());
     return vt;
 }
+MatGraph GraphtoMatGraph(const Graph& G) {
+    MatGraph v;
+    for (auto it :G ) {
+        char u = it.first;
+        for (auto e : G.find(u)->second) {
+            v.push_back({u,e.v,e.w});
+        }
+    }
+    return v;
+}
 // Nhap graph vao tu file
 Graph inputUndirectedGraph() {
     freopen("input.txt","r",stdin);
@@ -64,7 +110,7 @@ Graph inputUndirectedGraph() {
     map<char,vector<Edge>>G;
     while (cin >> u >> v >> w) {
         G[u].push_back({v,w});
-        G[v].push_back({u,v});
+        //G[v].push_back({u,w});
     }
     return G;
 }
@@ -239,16 +285,34 @@ void Bellman_Ford(const Graph& G,const char& s,const char& des) {
         cout << u << ' ' << D[u] << '\n';
     }
 }
+void display(const Graph& G) {
+    for (const auto& it : G) {
+        char u = it.first;
+        for (Edge e : G.find(u)->second)    cout << u << ' ' << e.v << ' ' << e.w << '\n';
+    }
+}
+void display(const MatGraph& V) {
+    for (auto e : V) {
+        cout << e.u << ' ' << e.v << ' ' << e.w << '\n';
+    }
+}
 
 int main() {
-    Graph G = inputDirectedGraph();
-    // for (const auto& it : G) {
-    //     char u = it.first;
-    //     vector<Edge> p = it.second;
-    //     for (Edge e : p)    cout << u << ' ' << e.v << ' ' << e.w << '\n';
-    // }
-    //BFS(G,'A');
-    Bellman_Ford(G,'S','C');
-    //DijkstraSparse(G,'A','C');
+    Graph G = inputUndirectedGraph();
+    MatGraph V = GraphtoMatGraph(G);
+
+    display(V);
+
+    dsu.init(getGraphInfo(G).first);
+    sort(V.begin(),V.end(),[](Edges &x,Edges y) {
+        return x.w < y.w;
+    });
+    int totalWeight = 0;
+    for (auto e : V) {
+        if (!dsu.join(e.u-'A' + 1,e.v-'A' + 1)) continue;
+        totalWeight += e.w;
+    }
+    cout << totalWeight << '\n';
+    //Bellman_Ford(G,'S','C');
     return 0;
 }

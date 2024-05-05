@@ -1,0 +1,91 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"D:/Long/Program files/msys2/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include",
+						"D:/Long/Program files/msys2/mingw64/include",
+						"D:/Long/Program files/msys2/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed"
+					],
+					"linkDirectories" : [],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : []
+				},
+				"path" : "D:/Long/Program files/msys2/mingw64/bin/cc.exe",
+				"version" : "13.2.0"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"D:/Long/Program files/msys2/mingw64/include/c++/13.2.0",
+						"D:/Long/Program files/msys2/mingw64/include/c++/13.2.0/x86_64-w64-mingw32",
+						"D:/Long/Program files/msys2/mingw64/include/c++/13.2.0/backward",
+						"D:/Long/Program files/msys2/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include",
+						"D:/Long/Program files/msys2/mingw64/include",
+						"D:/Long/Program files/msys2/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed"
+					],
+					"linkDirectories" : [],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : []
+				},
+				"path" : "D:/Long/Program files/msys2/mingw64/bin/c++.exe",
+				"version" : "13.2.0"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm",
+				"ccm",
+				"cxxm",
+				"c++m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"implicit" : {},
+				"path" : "D:/Long/Program files/msys2/mingw64/bin/windres.exe"
+			},
+			"language" : "RC",
+			"sourceFileExtensions" : 
+			[
+				"rc",
+				"RC"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}
