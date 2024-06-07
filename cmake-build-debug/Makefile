@@ -128,6 +128,30 @@ Graph/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/build
 .PHONY : Graph/fast
 
+functions.obj: functions.cpp.obj
+.PHONY : functions.obj
+
+# target to build an object file
+functions.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/functions.cpp.obj
+.PHONY : functions.cpp.obj
+
+functions.i: functions.cpp.i
+.PHONY : functions.i
+
+# target to preprocess a source file
+functions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/functions.cpp.i
+.PHONY : functions.cpp.i
+
+functions.s: functions.cpp.s
+.PHONY : functions.s
+
+# target to generate assembly for a file
+functions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/functions.cpp.s
+.PHONY : functions.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -152,6 +176,78 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+minimum_spanning_tree.obj: minimum_spanning_tree.cpp.obj
+.PHONY : minimum_spanning_tree.obj
+
+# target to build an object file
+minimum_spanning_tree.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/minimum_spanning_tree.cpp.obj
+.PHONY : minimum_spanning_tree.cpp.obj
+
+minimum_spanning_tree.i: minimum_spanning_tree.cpp.i
+.PHONY : minimum_spanning_tree.i
+
+# target to preprocess a source file
+minimum_spanning_tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/minimum_spanning_tree.cpp.i
+.PHONY : minimum_spanning_tree.cpp.i
+
+minimum_spanning_tree.s: minimum_spanning_tree.cpp.s
+.PHONY : minimum_spanning_tree.s
+
+# target to generate assembly for a file
+minimum_spanning_tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/minimum_spanning_tree.cpp.s
+.PHONY : minimum_spanning_tree.cpp.s
+
+shortest_path.obj: shortest_path.cpp.obj
+.PHONY : shortest_path.obj
+
+# target to build an object file
+shortest_path.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/shortest_path.cpp.obj
+.PHONY : shortest_path.cpp.obj
+
+shortest_path.i: shortest_path.cpp.i
+.PHONY : shortest_path.i
+
+# target to preprocess a source file
+shortest_path.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/shortest_path.cpp.i
+.PHONY : shortest_path.cpp.i
+
+shortest_path.s: shortest_path.cpp.s
+.PHONY : shortest_path.s
+
+# target to generate assembly for a file
+shortest_path.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/shortest_path.cpp.s
+.PHONY : shortest_path.cpp.s
+
+traverse.obj: traverse.cpp.obj
+.PHONY : traverse.obj
+
+# target to build an object file
+traverse.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/traverse.cpp.obj
+.PHONY : traverse.cpp.obj
+
+traverse.i: traverse.cpp.i
+.PHONY : traverse.i
+
+# target to preprocess a source file
+traverse.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/traverse.cpp.i
+.PHONY : traverse.cpp.i
+
+traverse.s: traverse.cpp.s
+.PHONY : traverse.s
+
+# target to generate assembly for a file
+traverse.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Graph.dir\build.make CMakeFiles/Graph.dir/traverse.cpp.s
+.PHONY : traverse.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -161,9 +257,21 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Graph
+	@echo ... functions.obj
+	@echo ... functions.i
+	@echo ... functions.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... minimum_spanning_tree.obj
+	@echo ... minimum_spanning_tree.i
+	@echo ... minimum_spanning_tree.s
+	@echo ... shortest_path.obj
+	@echo ... shortest_path.i
+	@echo ... shortest_path.s
+	@echo ... traverse.obj
+	@echo ... traverse.i
+	@echo ... traverse.s
 .PHONY : help
 
 

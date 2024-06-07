@@ -4,12 +4,11 @@
 #include <queue>
 
 #include "graph.h"
-#include "functions.cpp"
 
 
 using namespace std;
 
-void Dijkstra(const Graph& G,const char& s,const char& des) {
+int Dijkstra(const Graph& G,const char& s,const char& des) {
     vector<int>D;
     D.resize(N,inf);
     vector<bool>P;
@@ -17,6 +16,8 @@ void Dijkstra(const Graph& G,const char& s,const char& des) {
     D[s] = 0;
     Path trace;
     trace.resize(N,-1);
+
+    vector<char> vt = getVertexes(G);
     for (int i = 1;i <= G.size();++i) {
         char uBest;
         int Min = inf;
@@ -38,11 +39,21 @@ void Dijkstra(const Graph& G,const char& s,const char& des) {
                 trace[v] = u;
             }
         }
+        for (char it : vt){
+            if (D[it] == inf) {
+                cout << "inf\t";
+                continue;
+            }
+            cout << D[it] << "\t";
+        }
+        cout << '\n';
     }
     //for (auto it : trace)   cout << it << '\n';
-    Path path = tracePath(trace,s,des);
-    for (char it : path) cout << it << ' ';
-    cout << '\n';
+    // cout << "Duong di ngan nhat tu " << s << " den " << des << " la: ";
+    // Path path = tracePath(trace,s,des);
+    // for (char it : path) cout << it << " ";
+    // cout << "======> Co do dai la: ";
+    return D[des];
 }
 void DijkstraSparse(const Graph& G,const char& s,const char& des) {
     vector<int>D;
@@ -64,7 +75,7 @@ void DijkstraSparse(const Graph& G,const char& s,const char& des) {
         char u = x.u;
         if (P[u] == true)    continue;
         P[u] = true;
-        // Check if vector is empty
+        // Check if graph is empty
         if (G.count(u) == 0) continue;
         // Cai tien cac duong di qua u
         for (Edge e : G.find(u)->second) {

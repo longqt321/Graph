@@ -5,6 +5,7 @@
 #include <queue>
 
 #include "graph.h"
+
 bool visited[N] = {};
 using namespace std;
 

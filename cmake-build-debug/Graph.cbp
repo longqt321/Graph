@@ -80,7 +80,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Long/The University of Technology/Graph/functions.cpp">
+			<Option target="Graph"/>
+		</Unit>
+		<Unit filename="D:/Long/The University of Technology/Graph/graph.h">
+			<Option target="Graph"/>
+		</Unit>
 		<Unit filename="D:/Long/The University of Technology/Graph/main.cpp">
+			<Option target="Graph"/>
+		</Unit>
+		<Unit filename="D:/Long/The University of Technology/Graph/minimum_spanning_tree.cpp">
+			<Option target="Graph"/>
+		</Unit>
+		<Unit filename="D:/Long/The University of Technology/Graph/shortest_path.cpp">
+			<Option target="Graph"/>
+		</Unit>
+		<Unit filename="D:/Long/The University of Technology/Graph/traverse.cpp">
 			<Option target="Graph"/>
 		</Unit>
 		<Unit filename="D:/Long/The University of Technology/Graph/CMakeLists.txt">

@@ -31,7 +31,7 @@ struct cmp {
     }
 };
 
-struct Dsu
+extern struct Dsu
 {
     std::vector<int> parent;
     std::vector<int> size;
@@ -69,11 +69,16 @@ typedef std::map<char,std::vector<Edge>> Graph;
 Graph inputUndirectedGraph();
 Graph inputDirectedGraph();
 std::pair<int,int> getGraphInfo(const Graph& G);
+std::vector<char> getVertexes(const Graph& G);
+MatGraph GraphtoMatGraph(const Graph& G);
 void DFS(const Graph& G,const char& s);
 void BFS(const Graph& G,const char& s);
-void Dijkstra(const Graph& G,const char& s,const char& des);
+int Dijkstra(const Graph& G,const char& s,const char& des);
 void DijkstraSparse(const Graph& G,const char& s,const char& des);
 void Bellman_Ford(const Graph& G,const char& s,const char& des);
 void display(const Graph& G);
+void display(const MatGraph& V);
+Path tracePath(const Path& trace,char s,char u);
+void Kruskal(const Graph& G);
 
 #endif // GRAPH_H

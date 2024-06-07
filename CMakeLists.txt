@@ -8,4 +8,5 @@ add_executable(Graph main.cpp
         shortest_path.cpp
         functions.cpp
         traverse.cpp
+        minimum_spanning_tree.cpp
 )
