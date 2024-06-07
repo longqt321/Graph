@@ -17,6 +17,10 @@ int Dijkstra(const Graph& G,const char& s,const char& des) {
     Path trace;
     trace.resize(N,-1);
 
+    // Thay dong nay de skip 1 canh bat ki
+    char uSkip = 'C';
+    char vSkip = 'D';
+
     vector<char> vt = getVertexes(G);
     for (int i = 1;i <= G.size();++i) {
         char uBest;
@@ -34,6 +38,7 @@ int Dijkstra(const Graph& G,const char& s,const char& des) {
         for (Edge e : G.find(u)->second) {
             char v = e.v;
             int w = e.w;
+            if ((u == uSkip && v == vSkip) || (u == vSkip && v == uSkip)) continue;
             if (D[v] > D[u] + w) {
                 D[v] = D[u] + w;
                 trace[v] = u;
@@ -49,10 +54,10 @@ int Dijkstra(const Graph& G,const char& s,const char& des) {
         cout << '\n';
     }
     //for (auto it : trace)   cout << it << '\n';
-    // cout << "Duong di ngan nhat tu " << s << " den " << des << " la: ";
-    // Path path = tracePath(trace,s,des);
-    // for (char it : path) cout << it << " ";
-    // cout << "======> Co do dai la: ";
+    cout << "Duong di ngan nhat tu " << s << " den " << des << " la: ";
+    Path path = tracePath(trace,s,des);
+    for (char it : path) cout << it << " ";
+    cout << "======> Co do dai la: ";
     return D[des];
 }
 void DijkstraSparse(const Graph& G,const char& s,const char& des) {

@@ -110,3 +110,14 @@ Graph inputDirectedGraph() {
     }
     return G;
 }
+
+int getWeight(const Graph& G,const char& u,const char& v) {
+    int res = 0;
+    for (const Edge& e : G.find(u)->second) {
+        if (e.v == v) {
+            res = e.w;
+            break;
+        }
+    }
+    return res;
+}

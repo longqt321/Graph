@@ -78,7 +78,8 @@ void DijkstraSparse(const Graph& G,const char& s,const char& des);
 void Bellman_Ford(const Graph& G,const char& s,const char& des);
 void display(const Graph& G);
 void display(const MatGraph& V);
-Path tracePath(const Path& trace,char s,char u);
+Path tracePath(const Path& trace,const char& s,const char& u);
 void Kruskal(const Graph& G);
+int getWeight(const Graph& G,const char&  u,const char& v);
 
 #endif // GRAPH_H

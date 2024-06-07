@@ -12,6 +12,6 @@ int main() {
         cout << it << "\t";
     }
     cout << '\n';
-    cout << Dijkstra(G,'A','B') << '\n';
+    cout << Dijkstra(G,'A','G') << '\n';
     return 0;
 }
