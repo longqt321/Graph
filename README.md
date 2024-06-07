@@ -7,7 +7,7 @@
 
 ### Hướng dẫn sử dụng các file.
 
-Các cấu trúc của chương trình được định nghĩa trong file: graph.h  
+- Các cấu trúc của chương trình được định nghĩa trong file: graph.h  
 - Duyệt đồ thị: traverse.cpp  
 - Tìm đường đi ngắn nhất: shortest_path.cpp  
 - mCác hàm hỗ trợ ( lấy thông tin đồ thị, in đồ thị, chuyển đổi từ đồ thị danh sách kề sang đồ thị ma trận... ): functions.cpp  
