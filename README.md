@@ -1,5 +1,5 @@
 # Graph
-Ở trên gồm các giải thuật cơ bản trong các bài toán đồ thị như <space><space>
+Ở trên gồm các giải thuật cơ bản trong các bài toán đồ thị như  
 Thuật toán duyệt đồ thị ( graph traversal ) gồm DFS (depth first search) và BFS (breadth first search).
 Tìm đường đi ngắn nhất ( find shortest path ): Sử dụng Dijkstra, Dijkstra sparse (1 phiên bản cải tiến từ Dijkstra, áp dụng trong trường hợp đồ thị là đồ thị thưa - sparse), và Bellman_Floyd. Còn 1 giải thuật nữa chưa được áp dụng
 Tìm cây khung bé nhất ( find minimum spanning tree ): Sử dụng thuật toán Kruskal và cấu trúc dữ liệu Disjoint set union. Ngoài ra còn có thuật toán Prim nhưng chưa được áp dụng.
